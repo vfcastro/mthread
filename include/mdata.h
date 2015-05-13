@@ -7,6 +7,20 @@
 #ifndef __mdata__
 #define __mdata__
 
+#include <ucontext.h>
+#include <stdlib.h>
+
+#define SUCCESS 0
+#define ERROR -1
+#define STACKSIZE 10485760
+
+typedef enum
+{
+	STATE_READY,
+	STATE_RUNNING,
+	STATE_BLOCKED
+} STATE_t;
+
 /* NÃO ALTERAR ESSA struct */
 typedef struct TCB { 
 	int  tid;		// identificador da thread 
